@@ -3,7 +3,7 @@
  */
 class TimeIntervalSet(val periods: List<Int>) {
     // example:
-    // 0, 2, 5, 9 -> { 0..0, 1..2, 3..5, 6..9, 10..* }
+    // 0, 2, 5, 9 -> [0..0, 1..2, 3..5, 6..9, 10..]
 
     val map = hashMapOf<Int, Int>()
 
