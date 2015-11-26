@@ -30,7 +30,7 @@ class PrefixSpan(val db: List<Sequence>, val tis: TimeIntervalSet) {
         }
     }
 
-    fun _mine(minSupport: Int, func: (SequentialPattern) -> Unit) {
+    private fun _mine(minSupport: Int, func: (SequentialPattern) -> Unit) {
         if (DEBUG) {
             println("-- mine1-db")
             println(Utils.getStringOfSequences(db))
@@ -103,7 +103,7 @@ class PrefixSpan(val db: List<Sequence>, val tis: TimeIntervalSet) {
         return map.filter { it.value.size >= minSupport }
     }
 
-    fun project(item: String, sequenceIds: Set<String>): Set<PseudoSequence> {
+    private fun project(item: String, sequenceIds: Set<String>): Set<PseudoSequence> {
         val projectedDB = linkedSetOf<PseudoSequence>()
         for (seq in db.filter { sequenceIds.contains(it.id) }) {
             for ((index, pair) in seq.pairs.withIndex()) {

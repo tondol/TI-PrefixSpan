@@ -13,6 +13,7 @@ class Utils {
             return "[" + db.map { it.toString() }.joinToString(",\n ") + "]"
         }
 
+        // 実験用
         fun generateTimeIntervalSets(size: Int, from: Int, to: Int): List<TimeIntervalSet> {
             val timeIntervalSets = arrayListOf<TimeIntervalSet>()
             val digits = ArrayList((0..size - 1).map { from })
